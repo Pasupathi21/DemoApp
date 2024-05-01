@@ -6,22 +6,6 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
  *
  * @type {import('metro-config').MetroConfig}
  */
-// const config = {
-//     resolver: {
-//         alias: {
-//             '@src': './src',
-//         },
-//     },
-// };
+const config = {};
 
-module.exports = async () => {
-    const defaultConfig = await getDefaultConfig(__dirname);
-    return mergeConfig(defaultConfig, {
-      resolver: {
-        alias: {
-          '@src': './src',
-          // Add more aliases if needed
-        },
-      },
-    });
-  };
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
